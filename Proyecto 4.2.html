@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+
+body {
+
+  background-image:url('https://checks-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,w_500/v1/product/check/securiguard-blue-check-1');
+  background-size:100% 640%;
+  background-repeat: no-repeat;
+}
+#funny {
+position:relative;
+margin-top:15px;
+margin-left:935px;
+}
+
+#car{
+position: absolute;
+margin-top: 190px;
+margin-left:-880px;
+margin-middle:"";
+width:830px;
+}
+
+#engine{
+position:absolute;
+margin-top: 150px;
+margin-left:-775px;
+margin-middle:"";
+width:690px;
+}
+
+#notebook{
+position:absolute;
+margin-top: 150px;
+margin-left:-25px;
+margin-middle:"";
+width:220px;
+
+}
+
+#pencil{
+position:absolute;
+margin-top: 305px;
+margin-left:-950px;
+margin-middle:"";
+width:473px;
+}
+
+#submit{
+position:absolute;
+margin-top: 350px;
+margin-left:-90px;
+margin-middle:"";
+width:145px;
+
+</style>
+
+
+<body>
+
+<form action="/action_page.php">
+  <input type="date" name="date" id="funny">
+  <input type="blank" name="text" id="car">
+  <input type="blank" name="text" id="engine">
+  <input type="quantity" name="text" id="notebook">
+  <input type="blank" name="text" id="pencil">
+  <input type="submit" value="Submit" onclick="Enable();"id="submit">
+  </form>
+ 
+
+<p id="p01"></p>
+
+<script>
+function myFunction() {
+    var message, x,flag=0,text="";
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "")  throw "it's empty";
+        if(isNaN(x)) throw "it's not a number";
+        x = Number(x);
+        if(x > 5)   throw "it's too high";
+        if(x < 10)    throw "it's too low";
+    }
+    catch(err) {
+    text= "Input" +String(err);
+        message.innerHTML = text.fontcolor("red");
+        flag=1;
+    }
+    finally {
+        document.getElementById("demo").value = "";
+        if (flag==0)
+         document.getElementById("p01").innerHTML = "ok".fontcolor("blue");
+    }
+}
+</script>
+
+</body>
+</html>
